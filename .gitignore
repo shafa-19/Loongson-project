@@ -1,0 +1,17 @@
+# build outputs of the LoongIDE projects
+Build/
+*.o
+*.obj
+*.d
+*.map
+*.elf.log
+*.lxp.bak
+*.layout
+# host test artefacts
+host_test/*.exe
+host_test/main_under_test.c
+# editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

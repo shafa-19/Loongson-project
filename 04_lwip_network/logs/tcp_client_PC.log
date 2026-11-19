@@ -1,0 +1,13 @@
+>>> listening on 192.168.1.111:9061
+>>> board connected from ('192.168.1.123', 49153)
+>>> RECEIVE: client ticks = 2105.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2211.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2316.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2421.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2526.
+>>> SENT   : hello from PC server
+>>> RESULT: 5 messages exchanged

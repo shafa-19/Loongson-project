@@ -1,0 +1,5 @@
+>>> UDP 9063 listening (70s)
+>>> FROM ('192.168.1.123', 49153) -> client ticks = 1804.
+>>> reply sent
+>>> FROM ('192.168.1.123', 49153) -> client ticks = 5435.
+>>> reply sent

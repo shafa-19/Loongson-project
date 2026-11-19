@@ -1,0 +1,43 @@
+ + 0x80e14604/472204(z) Attempt to read non page aligned data
+ + 16619 syms Attempt to read non page aligned data
+Attempt to read non page aligned data
+?
+CAUSE=40008000
+STATUS=00400004
+ERRORPC=00000000
+EPC=00000000
+BADADDR=00000000
+Clock_mask: 8000, step=100000
+
+ \ | /
+- RT -     Thread Operating System
+ / | \     4.0.3 build Nov 16 2026
+ 2006 - 2019 Copyright by rt-thread team
+
+Welcome to RT-Thread.
+
+[init] barber thread started (priority 10).
+[init] customer 1 started (priority 5).
+[init] customer 2 started (priority 6).
+[init] customer 3 started (priority 7).
+[init] customer 4 started (priority 8).
+[init] customer 5 started (priority 9).
+msh />[customer 1] sits down, freeseats=2
+[customer 1] is waiting for a haircut.
+[customer 2] sits down, freeseats=1
+[customer 2] is waiting for a haircut.
+[customer 3] sits down, freeseats=0
+[customer 3] is waiting for a haircut.
+[customer 4] no free seat, leaves.
+[customer 5] no free seat, leaves.
+[barber] find customer 1, begin to cut hair.
+[customer 1] haircut done, leaves.
+[barber] finish cut hair.
+[barber] find customer 2, begin to cut hair.
+[customer 2] haircut done, leaves.
+[barber] finish cut hair.
+[barber] find customer 3, begin to cut hair.
+[customer 3] haircut done, leaves.
+[barber] finish cut hair.
+[barber] no customer, go to sleep.
+

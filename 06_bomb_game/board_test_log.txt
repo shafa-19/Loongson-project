@@ -1,0 +1,112 @@
+
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+Time: 90 s, fuses: 5, strikes allowed: 3
+
+=== stage 1/5: the bomb will show 2 wires ===
+  the bomb is arming ...
+[90s] stage 1/5  wire 1/2  strikes 0/3 > [88s] stage 1/5  wire 1/2  strikes 0/3 > D
+
+  scan: the code is 5-6   (15 seconds lost)
+[73s] stage 1/5  wire 1/2  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[73s] stage 1/5  wire 2/2  strikes 0/3 > 6
+
+  fuse 1 cut
+  clean stage: +5 seconds
+
+=== stage 2/5: the bomb will show 3 wires ===
+  the bomb is arming ...
+[78s] stage 2/5  wire 1/3  strikes 0/3 > [75s] stage 2/5  wire 1/3  strikes 0/3 > D
+
+  scan: the code is 2-8-3   (15 seconds lost)
+[60s] stage 2/5  wire 1/3  strikes 0/3 > 2
+
+  ok, wire 2 correct
+[60s] stage 2/5  wire 2/3  strikes 0/3 > [59s] stage 2/5  wire 2/3  strikes 0/3 > 8
+
+  ok, wire 8 correct
+[59s] stage 2/5  wire 3/3  strikes 0/3 > 3
+
+  fuse 2 cut
+  clean stage: +5 seconds
+
+=== stage 3/5: the bomb will show 4 wires ===
+  the bomb is arming ...
+[64s] stage 3/5  wire 1/4  strikes 0/3 > [61s] stage 3/5  wire 1/4  strikes 0/3 > [60s] stage 3/5  wire 1/4  strikes 0/3 > D
+
+  scan: the code is 1-4-8-4   (15 seconds lost)
+[45s] stage 3/5  wire 1/4  strikes 0/3 > 1
+
+  ok, wire 1 correct
+[45s] stage 3/5  wire 2/4  strikes 0/3 > 4
+
+  ok, wire 4 correct
+[45s] stage 3/5  wire 3/4  strikes 0/3 > 8
+
+  ok, wire 8 correct
+[45s] stage 3/5  wire 4/4  strikes 0/3 > 4
+
+  fuse 3 cut
+  clean stage: +5 seconds
+
+=== stage 4/5: the bomb will show 5 wires ===
+  the bomb is arming ...
+[50s] stage 4/5  wire 1/5  strikes 0/3 > [46s] stage 4/5  wire 1/5  strikes 0/3 > D
+
+  scan: the code is 5-5-8-4-5   (15 seconds lost)
+[31s] stage 4/5  wire 1/5  strikes 0/3 > [30s] stage 4/5  wire 1/5  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[30s] stage 4/5  wire 2/5  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[30s] stage 4/5  wire 3/5  strikes 0/3 > 8
+
+  ok, wire 8 correct
+[30s] stage 4/5  wire 4/5  strikes 0/3 > [29s] stage 4/5  wire 4/5  strikes 0/3 > 4
+
+  ok, wire 4 correct
+[29s] stage 4/5  wire 5/5  strikes 0/3 > 5
+
+  fuse 4 cut
+  clean stage: +5 seconds
+
+=== stage 5/5: the bomb will show 6 wires ===
+  the bomb is arming ...
+[34s] stage 5/5  wire 1/6  strikes 0/3 > [30s] stage 5/5  wire 1/6  strikes 0/3 > D
+
+  scan: the code is 3-5-2-5-6-3   (15 seconds lost)
+[15s] stage 5/5  wire 1/6  strikes 0/3 > [14s] stage 5/5  wire 1/6  strikes 0/3 > 3
+
+  ok, wire 3 correct
+[14s] stage 5/5  wire 2/6  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[14s] stage 5/5  wire 3/6  strikes 0/3 > 2
+
+  ok, wire 2 correct
+[14s] stage 5/5  wire 4/6  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[14s] stage 5/5  wire 5/6  strikes 0/3 > 6
+
+  ok, wire 6 correct
+[14s] stage 5/5  wire 6/6  strikes 0/3 > [13s] stage 5/5  wire 6/6  strikes 0/3 > 3
+
+  fuse 5 cut
+
+
+  ***  D E F U S E D  ***
+  all five fuses are cut.
+  time left: 13 s, strikes used: 0
+  type N (or press ENTER) for a new bomb
+> 

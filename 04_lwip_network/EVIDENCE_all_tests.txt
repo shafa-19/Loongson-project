@@ -1,0 +1,61 @@
+================================================================
+Section 8 - Network transmission, four tests on OUR board
+Board: Loongson 1B (LS1B200), 192.168.1.123   PC: 192.168.1.111/24
+Project: example_9_1 (RT-Thread + lwIP 1.4.1), 168 units, text 275896
+Date: 2026-11-17   Tool: LoongIDE F9 (JTAG download) + Python peers
+================================================================
+
+--- 8.2.12  TCP SERVER  (board listens 192.168.1.123:9060) -------
+$ python tcp_client.py
+[1] connected
+[2] sent  : hello from PC #1
+[3] echo  : hello from PC #1
+[2] sent  : hello from PC #2
+[3] echo  : hello from PC #2
+[2] sent  : hello from PC #3
+[3] echo  : hello from PC #3
+RESULT: PASS (3 of 3 echoes)
+
+--- 8.2.13  TCP CLIENT  (board connects to PC 192.168.1.111:9061) --
+$ python pc_tcp_server_9061.py
+>>> listening on 192.168.1.111:9061
+>>> board connected from ('192.168.1.123', 49153)
+>>> RECEIVE: client ticks = 2105.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2211.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2316.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2421.
+>>> SENT   : hello from PC server
+>>> RECEIVE: client ticks = 2526.
+>>> SENT   : hello from PC server
+>>> RESULT: 5 messages exchanged
+RESULT: PASS
+
+--- 8.2.14  UDP SERVER  (board binds 192.168.1.123:9062) ----------
+$ python udp_peer.py
+sent: udp hello from PC #1 | echo: udp hello from PC #1 | from ('192.168.1.123', 9062)
+sent: udp hello from PC #2 | echo: udp hello from PC #2 | from ('192.168.1.123', 9062)
+sent: udp hello from PC #3 | echo: udp hello from PC #3 | from ('192.168.1.123', 9062)
+RESULT: PASS (3 of 3 echoed)
+
+--- 8.2.15  UDP CLIENT  (board sends to PC 192.168.1.111:9063) ----
+$ python udp_long.py
+>>> UDP 9063 listening (70s)
+>>> FROM ('192.168.1.123', 49153) -> client ticks = 1804.
+>>> reply sent
+>>> FROM ('192.168.1.123', 49153) -> client ticks = 5435.
+>>> reply sent
+RESULT: PASS (datagrams arrive from the board)
+
+Also verified:  ping 192.168.1.123 -> 6/6 replies, 0% loss, <1 ms
+
+Build notes (differences that matter):
+ * the project must be compiled with -DUSE_LWIP -DBSP_USE_GMAC0, otherwise
+   the lwIP/GMAC initialisation code is compiled out and the board stays
+   silent on the network (this cost one debugging round).
+ * console_init() must stay at 115200 at boot: at 9600 the boot-time
+   rt_kprintf in Clock_initialize takes ~36 ms with interrupts disabled and
+   the pending ticks then raise "TLB Load" - the console is switched to
+   9600 later, inside main(), for the CH340 adapter.

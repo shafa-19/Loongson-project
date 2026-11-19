@@ -1,0 +1,406 @@
+BOMB DEFUSAL GAME -- host simulation of the game logic
+main.c is compiled unchanged (-Dmain=game_main), the BSP is stubbed.
+Generated: Tue Nov 17 22:00:35 AST 2026
+
+=========== scenario: win ===========
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+Time: 90 s, fuses: 5, strikes allowed: 3
+
+=== stage 1/5: the bomb will show 2 wires ===
+  the bomb is arming ...
+[90s] stage 1/5  wire 1/2  strikes 0/3 > [89s] stage 1/5  wire 1/2  strikes 0/3 > 2
+
+  ok, wire 2 correct
+[89s] stage 1/5  wire 2/2  strikes 0/3 > [88s] stage 1/5  wire 2/2  strikes 0/3 > 3
+
+  fuse 1 cut
+  clean stage: +5 seconds
+
+=== stage 2/5: the bomb will show 3 wires ===
+  the bomb is arming ...
+[93s] stage 2/5  wire 1/3  strikes 0/3 > [91s] stage 2/5  wire 1/3  strikes 0/3 > 7
+
+  ok, wire 7 correct
+[91s] stage 2/5  wire 2/3  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[91s] stage 2/5  wire 3/3  strikes 0/3 > 5
+
+  fuse 2 cut
+  clean stage: +5 seconds
+
+=== stage 3/5: the bomb will show 4 wires ===
+  the bomb is arming ...
+[96s] stage 3/5  wire 1/4  strikes 0/3 > [93s] stage 3/5  wire 1/4  strikes 0/3 > [92s] stage 3/5  wire 1/4  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[92s] stage 3/5  wire 2/4  strikes 0/3 > 1
+
+  ok, wire 1 correct
+[92s] stage 3/5  wire 3/4  strikes 0/3 > 1
+
+  ok, wire 1 correct
+[92s] stage 3/5  wire 4/4  strikes 0/3 > 5
+
+  fuse 3 cut
+  clean stage: +5 seconds
+
+=== stage 4/5: the bomb will show 5 wires ===
+  the bomb is arming ...
+[97s] stage 4/5  wire 1/5  strikes 0/3 > [93s] stage 4/5  wire 1/5  strikes 0/3 > 7
+
+  ok, wire 7 correct
+[93s] stage 4/5  wire 2/5  strikes 0/3 > 6
+
+  ok, wire 6 correct
+[93s] stage 4/5  wire 3/5  strikes 0/3 > 3
+
+  ok, wire 3 correct
+[93s] stage 4/5  wire 4/5  strikes 0/3 > [92s] stage 4/5  wire 4/5  strikes 0/3 > 3
+
+  ok, wire 3 correct
+[92s] stage 4/5  wire 5/5  strikes 0/3 > 8
+
+  fuse 4 cut
+  clean stage: +5 seconds
+
+=== stage 5/5: the bomb will show 6 wires ===
+  the bomb is arming ...
+[97s] stage 5/5  wire 1/6  strikes 0/3 > [93s] stage 5/5  wire 1/6  strikes 0/3 > 3
+
+  ok, wire 3 correct
+[93s] stage 5/5  wire 2/6  strikes 0/3 > 5
+
+  ok, wire 5 correct
+[93s] stage 5/5  wire 3/6  strikes 0/3 > [92s] stage 5/5  wire 3/6  strikes 0/3 > 8
+
+  ok, wire 8 correct
+[92s] stage 5/5  wire 4/6  strikes 0/3 > 6
+
+  ok, wire 6 correct
+[92s] stage 5/5  wire 5/6  strikes 0/3 > 6
+
+  ok, wire 6 correct
+[92s] stage 5/5  wire 6/6  strikes 0/3 > 3
+
+  fuse 5 cut
+
+
+  ***  D E F U S E D  ***
+  all five fuses are cut.
+  time left: 92 s, strikes used: 0
+  type N (or press ENTER) for a new bomb
+> 
+====================================
+  PASS  banner printed
+  PASS  stage 1 announced
+  PASS  arming animation ran
+  PASS  virtual clock sane
+  PASS  all five fuses cut
+  PASS  victory screen
+  PASS  no strike used
+
+RESULT OK: 0 failure(s)
+
+=========== scenario: strike ===========
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+Time: 90 s, fuses: 5, strikes allowed: 3
+
+=== stage 1/5: the bomb will show 2 wires ===
+  the bomb is arming ...
+[90s] stage 1/5  wire 1/2  strikes 0/3 > [89s] stage 1/5  wire 1/2  strikes 0/3 > 3
+
+  WRONG wire 3 -- the code was 2-3, you were at position 1
+  strike 1/3, 10 seconds lost
+  the bomb is arming ...
+[79s] stage 1/5  wire 1/2  strikes 1/3 > [76s] stage 1/5  wire 1/2  strikes 1/3 > 3
+
+  WRONG wire 3 -- the code was 2-3, you were at position 1
+  strike 2/3, 10 seconds lost
+  the bomb is arming ...
+[66s] stage 1/5  wire 1/2  strikes 2/3 > [64s] stage 1/5  wire 1/2  strikes 2/3 > 3
+
+  WRONG wire 3 -- the code was 2-3, you were at position 1
+  strike 3/3, 10 seconds lost
+
+
+  ***  B O O M  ***  
+  the bomb exploded: three wrong wires
+  fuses cut: 0/5, strikes: 3/3
+  type N (or press ENTER) for a new bomb
+> 
+====================================
+  PASS  banner printed
+  PASS  stage 1 announced
+  PASS  arming animation ran
+  PASS  virtual clock sane
+  PASS  wrong wire reported
+  PASS  third strike counted
+  PASS  explosion screen
+  PASS  correct reason
+
+RESULT OK: 0 failure(s)
+
+=========== scenario: timeout ===========
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+Time: 90 s, fuses: 5, strikes allowed: 3
+
+=== stage 1/5: the bomb will show 2 wires ===
+  the bomb is arming ...
+[90s] stage 1/5  wire 1/2  strikes 0/3 > [89s] stage 1/5  wire 1/2  strikes 0/3 > [88s] stage 1/5  wire 1/2  strikes 0/3 > [87s] stage 1/5  wire 1/2  strikes 0/3 > [86s] stage 1/5  wire 1/2  strikes 0/3 > [85s] stage 1/5  wire 1/2  strikes 0/3 > [84s] stage 1/5  wire 1/2  strikes 0/3 > [83s] stage 1/5  wire 1/2  strikes 0/3 > [82s] stage 1/5  wire 1/2  strikes 0/3 > [81s] stage 1/5  wire 1/2  strikes 0/3 > [80s] stage 1/5  wire 1/2  strikes 0/3 > [79s] stage 1/5  wire 1/2  strikes 0/3 > [78s] stage 1/5  wire 1/2  strikes 0/3 > [77s] stage 1/5  wire 1/2  strikes 0/3 > [76s] stage 1/5  wire 1/2  strikes 0/3 > [75s] stage 1/5  wire 1/2  strikes 0/3 > [74s] stage 1/5  wire 1/2  strikes 0/3 > [73s] stage 1/5  wire 1/2  strikes 0/3 > [72s] stage 1/5  wire 1/2  strikes 0/3 > [71s] stage 1/5  wire 1/2  strikes 0/3 > [70s] stage 1/5  wire 1/2  strikes 0/3 > [69s] stage 1/5  wire 1/2  strikes 0/3 > [68s] stage 1/5  wire 1/2  strikes 0/3 > [67s] stage 1/5  wire 1/2  strikes 0/3 > [66s] stage 1/5  wire 1/2  strikes 0/3 > [65s] stage 1/5  wire 1/2  strikes 0/3 > [64s] stage 1/5  wire 1/2  strikes 0/3 > [63s] stage 1/5  wire 1/2  strikes 0/3 > [62s] stage 1/5  wire 1/2  strikes 0/3 > [61s] stage 1/5  wire 1/2  strikes 0/3 > [60s] stage 1/5  wire 1/2  strikes 0/3 > [59s] stage 1/5  wire 1/2  strikes 0/3 > [58s] stage 1/5  wire 1/2  strikes 0/3 > [57s] stage 1/5  wire 1/2  strikes 0/3 > [56s] stage 1/5  wire 1/2  strikes 0/3 > [55s] stage 1/5  wire 1/2  strikes 0/3 > [54s] stage 1/5  wire 1/2  strikes 0/3 > [53s] stage 1/5  wire 1/2  strikes 0/3 > [52s] stage 1/5  wire 1/2  strikes 0/3 > [51s] stage 1/5  wire 1/2  strikes 0/3 > [50s] stage 1/5  wire 1/2  strikes 0/3 > [49s] stage 1/5  wire 1/2  strikes 0/3 > [48s] stage 1/5  wire 1/2  strikes 0/3 > [47s] stage 1/5  wire 1/2  strikes 0/3 > [46s] stage 1/5  wire 1/2  strikes 0/3 > [45s] stage 1/5  wire 1/2  strikes 0/3 > [44s] stage 1/5  wire 1/2  strikes 0/3 > [43s] stage 1/5  wire 1/2  strikes 0/3 > [42s] stage 1/5  wire 1/2  strikes 0/3 > [41s] stage 1/5  wire 1/2  strikes 0/3 > [40s] stage 1/5  wire 1/2  strikes 0/3 > [39s] stage 1/5  wire 1/2  strikes 0/3 > [38s] stage 1/5  wire 1/2  strikes 0/3 > [37s] stage 1/5  wire 1/2  strikes 0/3 > [36s] stage 1/5  wire 1/2  strikes 0/3 > [35s] stage 1/5  wire 1/2  strikes 0/3 > [34s] stage 1/5  wire 1/2  strikes 0/3 > [33s] stage 1/5  wire 1/2  strikes 0/3 > [32s] stage 1/5  wire 1/2  strikes 0/3 > [31s] stage 1/5  wire 1/2  strikes 0/3 > [30s] stage 1/5  wire 1/2  strikes 0/3 > [29s] stage 1/5  wire 1/2  strikes 0/3 > [28s] stage 1/5  wire 1/2  strikes 0/3 > [27s] stage 1/5  wire 1/2  strikes 0/3 > [26s] stage 1/5  wire 1/2  strikes 0/3 > [25s] stage 1/5  wire 1/2  strikes 0/3 > [24s] stage 1/5  wire 1/2  strikes 0/3 > [23s] stage 1/5  wire 1/2  strikes 0/3 > [22s] stage 1/5  wire 1/2  strikes 0/3 > [21s] stage 1/5  wire 1/2  strikes 0/3 > [20s] stage 1/5  wire 1/2  strikes 0/3 > [19s] stage 1/5  wire 1/2  strikes 0/3 > [18s] stage 1/5  wire 1/2  strikes 0/3 > [17s] stage 1/5  wire 1/2  strikes 0/3 > [16s] stage 1/5  wire 1/2  strikes 0/3 > [15s] stage 1/5  wire 1/2  strikes 0/3 > [14s] stage 1/5  wire 1/2  strikes 0/3 > [13s] stage 1/5  wire 1/2  strikes 0/3 > [12s] stage 1/5  wire 1/2  strikes 0/3 > [11s] stage 1/5  wire 1/2  strikes 0/3 > [10s] stage 1/5  wire 1/2  strikes 0/3 > [9s] stage 1/5  wire 1/2  strikes 0/3 > [8s] stage 1/5  wire 1/2  strikes 0/3 > [7s] stage 1/5  wire 1/2  strikes 0/3 > [6s] stage 1/5  wire 1/2  strikes 0/3 > [5s] stage 1/5  wire 1/2  strikes 0/3 > [4s] stage 1/5  wire 1/2  strikes 0/3 > [3s] stage 1/5  wire 1/2  strikes 0/3 > [2s] stage 1/5  wire 1/2  strikes 0/3 > [1s] stage 1/5  wire 1/2  strikes 0/3 > 
+
+  ***  B O O M  ***  
+  the bomb exploded: the time ran out
+  fuses cut: 0/5, strikes: 0/3
+  type N (or press ENTER) for a new bomb
+> 
+====================================
+  PASS  banner printed
+  PASS  stage 1 announced
+  PASS  arming animation ran
+  PASS  virtual clock sane
+  PASS  explosion screen
+  PASS  time-out reason
+  PASS  countdown reached zero
+
+RESULT OK: 0 failure(s)
+
+=========== scenario: commands ===========
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+
+Type N (or just press ENTER) to arm the bomb
+> 
+
+==============================================
+   L O N G S O N  1 B   --   B O M B  D E F U S A L
+==============================================
+The bomb blinks its code on the 8 LEDs, one wire
+at a time.  Repeat the numbers in the same order
+and the next fuse is cut.  You have 90 seconds,
+three wrong wires and it goes off.
+
+Time: 90 s, fuses: 5, strikes allowed: 3
+
+=== stage 1/5: the bomb will show 2 wires ===
+  the bomb is arming ...
+[90s] stage 1/5  wire 1/2  strikes 0/3 > [89s] stage 1/5  wire 1/2  strikes 0/3 > H
+
+--- commands -------------------------------
+  1..8   cut wire n (one number per line)
+  D      scan the code, costs 15 s
+  R      replay the code on the LEDs, costs 5 s
+  S      status
+  N      new game
+  H      this help
+--------------------------------------------
+> [89s] stage 1/5  wire 1/2  strikes 0/3 > S
+[89s] stage 1/5  wire 1/2  strikes 0/3 > [88s] stage 1/5  wire 1/2  strikes 0/3 > D
+
+  scan: the code is 2-3   (15 seconds lost)
+[73s] stage 1/5  wire 1/2  strikes 0/3 > R
+
+  replay ...
+  the bomb is arming ...
+[68s] stage 1/5  wire 1/2  strikes 0/3 > [67s] stage 1/5  wire 1/2  strikes 0/3 > [66s] stage 1/5  wire 1/2  strikes 0/3 > Z
+
+  unknown command, H for help
+> [66s] stage 1/5  wire 1/2  strikes 0/3 > 2
+
+  ok, wire 2 correct
+[66s] stage 1/5  wire 2/2  strikes 0/3 > 3
+
+  fuse 1 cut
+  clean stage: +5 seconds
+
+=== stage 2/5: the bomb will show 3 wires ===
+  the bomb is arming ...
+[71s] stage 2/5  wire 1/3  strikes 0/3 > [69s] stage 2/5  wire 1/3  strikes 0/3 > 
+====================================
+  PASS  banner printed
+  PASS  stage 1 announced
+  PASS  arming animation ran
+  PASS  virtual clock sane
+  PASS  help screen (H)
+  PASS  scan works (D)
+  PASS  replay works (R)
+  PASS  bad command rejected (Z)
+  PASS  stage cleared after the commands
+
+RESULT OK: 0 failure(s)
+
